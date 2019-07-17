@@ -9,13 +9,51 @@
 	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script>
 	$( document ).ready(function() {
-			alert( "Welcome, the document is loaded :-)" );
+// 			alert( "Welcome, the document is loaded :-)" );
+		var close = document.getElementsByClassName("closebtn");
+                  var i;
+
+           for (i = 0; i < close.length; i++) {
+         close[i].onclick = function(){
+          var div = this.parentElement;
+           div.style.opacity = "0";
+        setTimeout(function(){ div.style.display = "none"; }, 600);
+  }
+}
 	});
 
-	$( window ).on( "load", function() {
-			alert( "You are In, the main window is loaded :-)" );
-	});
+// 	$( window ).on( "load", function() {
+// 			alert( "You are In, the main window is loaded :-)" );
+// 	});
 	</script>
+	
+	<style>
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
+
+/* .alert.success {background-color: #4CAF50;} */
+.alert.info {background-color: #2196F3;}
+		.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+	</style>
 </head>
 
 <body>
@@ -23,6 +61,10 @@
 		<img src="images/banner.png" alt="Rancid Tomatoes" />
 	</div>
 	<h1>TMNT (2007)</h1>
+	<div class="alert info">
+  <span class="closebtn">&times;</span>  
+  <strong>Info!</strong> Welcome
+</div>
 	<div class="container">
 		<div id="right">
 			<div>
